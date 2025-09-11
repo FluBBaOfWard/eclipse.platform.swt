@@ -133,6 +133,28 @@ public class GLData {
 	 */
 	public GLCanvas shareContext;
 
+    public static enum Profile {
+        CORE, COMPATIBILITY;
+    }
+
+    /**
+     * The major GL context version to use. It defaults to 0 for
+     * "not specified".
+     */
+    public int majorVersion;
+
+    /**
+     * The minor GL context version to use. If {@link #majorVersion}
+     * is 0 this field is unused.
+     */
+    public int minorVersion;
+
+    /**
+     * The profile to use. This is only valid when
+     * ({@link #majorVersion}.{@link #minorVersion}) is at least 3.0.
+     */
+    public Profile profile;
+
 /**
  * Returns a string containing a concise, human-readable
  * description of the receiver.
